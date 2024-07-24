@@ -38,7 +38,7 @@ Built with Next.js, Remmogo is a financial SaaS platform that connects to multip
 
 ## <a name="features">🔋 Features</a>
 
-**Authentication**: An ultra-secure SSR authentication with proper validations and authorization
+**Authentication**: An secure SSR authentication with proper validations and authorization
 
 **Connect Banks**: Integrates with Plaid for multiple bank account linking
 
