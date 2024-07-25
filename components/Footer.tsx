@@ -3,7 +3,17 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import React from 'react'
 
-const Footer = ({ user, type = 'desktop' }: FooterProps) => {
+interface User {
+  firstName: string;
+  email: string;
+}
+
+interface FooterProps {
+  user: User;
+  type?: 'desktop' | 'mobile';
+}
+
+const Footer: React.FC<FooterProps> = ({ user, type = 'desktop' }) => {
   const router = useRouter();
 
   const handleLogOut = async () => {
@@ -21,16 +31,16 @@ const Footer = ({ user, type = 'desktop' }: FooterProps) => {
       </div>
 
       <div className={type === 'mobile' ? 'footer_email-mobile' : 'footer_email'}>
-          <h1 className="text-14 truncate text-gray-700 font-semibold">
-            {user?.firstName}
-          </h1>
-          <p className="text-14 truncate font-normal text-gray-600">
-            {user?.email}
-          </p>
+        <h1 className="text-14 truncate text-gray-700 font-semibold">
+          {user?.firstName}
+        </h1>
+        <p className="text-14 truncate font-normal text-gray-600">
+          {user?.email}
+        </p>
       </div>
 
       <div className="footer_image" onClick={handleLogOut}>
-        <Image src="icons/logout.svg" fill alt="jsm" />
+        <Image src="icons/logout.svg" fill alt="Logout Icon" />
       </div>
     </footer>
   )
